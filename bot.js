@@ -9,11 +9,11 @@ const auth = require("./auth.json");
 const fs = require("fs");
 const client = new Discord.Client();
 
+// Keep seperate list of servers so bot is usable across multiple servers
+var servers = {};
 
-// when the bot comes online
-client.on("ready", () => {
-  console.log("Bot Online");
-});
+
+// EVENTS
 /*
 // add events from /events folder to each event
 fs.readdir("./events/", (err, files) => {
@@ -28,7 +28,6 @@ fs.readdir("./events/", (err, files) => {
 });
 */
 
-// EVENTS
 
 
 
@@ -48,38 +47,21 @@ client.on("message", (message) => {
     // call seperate file with command code
     try{
         let commandFile = require("./commands/"+command+".js");
-        commandFile.run(client, message, args);
+        commandFile.run(client, message, servers, args);
     } 
     catch (err) {
         console.error(err);
     }
-/*
-    /// Testing Commands
-    // call and response command, mostly for testing
-    if (command == "ping") {
-        message.channel.send("pong!");
-    }
-    // for testing interpretation of arguments, split by an undefined number of spaces
-    else if(command == "argstest"){
-        let [a1, a2, a3] = args;
-        message.reply("Argument 1: " + a1 + "  Argument 2: " + a2 + "  Argument 3: " + a3);
-    }
-    // for testing getting users tagged in a command message for targetting
-    else if(command == "tag"){
-        let user = message.mentions.members.first();
-        message.channel.send(user+ "f");
-    }
+});
 
+client.login(auth.discord_token);
+
+/*
 
     /// Functional Commands
     // kick a given member if a user has high enough permission to do so
     // also records the kick reason for audit logs if a reason is given
-    else if (command == "kick") {
-        let user = message.mentions.members.first();
-        let reason = args.slice(1).join(" "); // join arguments back together for reason
-        message.channel.send(message.author + " kicked " + user + "!");
-        user.kick(reason);
-    }
+   
     // change the prefix from its '!!' default
     else if (command == "prefix") {
         let new_prefix = message.content.split(" ").slice(1, 2)[0];
@@ -89,11 +71,7 @@ client.on("message", (message) => {
     }
 */
 
-
-    // EXCLUSIVE COMMANDS
-    // Commands beyond this point are executed only for me, the author
-    //if(message.author.id !== config.creatorID) return;
-    // TODO
+// when the bot comes online
+client.on("ready", () => {
+  console.log("Bot Online");
 });
-
-client.login(auth.discord_token);
