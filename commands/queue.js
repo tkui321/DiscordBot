@@ -1,14 +1,17 @@
 const ytdl = require("ytdl-core");
+
 exports.run = (client, message, servers, args) => {
 	if(!args[0]) {
-		message.channel.sendMessage(message.author + " please provide a link.");
+		message.channel.send(message.author + " please provide a link.");
 		return;
 	}
 
 	if(!message.member.voiceChannel){
-		message.channel.sendMessage(message.author + " please provide a link.");
+		message.channel.send(message.author + " please enter a voice channel.");
 		return;
 	}
+	
+	//add search if not a url
 
 	if(!servers[message.guild.id]) servers[message.guild.id] = {
 		queue: []
@@ -25,6 +28,7 @@ exports.run = (client, message, servers, args) => {
 function play(servers, connection, message){
 	var server = servers[message.guild.id];
 	server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter:"audioonly"}));
+	server.current = server.queue[0];
 
 	server.queue.shift();
 	server.dispatcher.on("end", function() {
@@ -36,3 +40,9 @@ function play(servers, connection, message){
 		}
 	});
 }
+
+//function isValid(url){
+//	return url.toLowerCase().indexOf("youtube.com" > -1);
+//} 28:52
+
+function searchVideos()
