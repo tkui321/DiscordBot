@@ -47,7 +47,7 @@ client.on("message", (message) => {
     // call seperate file with command code
     try{
         let commandFile = require("./commands/"+command+".js");
-        commandFile.run(client, message, servers, args);
+        commandFile.run(client, message, /*servers,*/ args);
     } 
     catch (err) {
         console.error(err);
