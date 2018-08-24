@@ -26,9 +26,9 @@ exports.run = (client, message, servers, args) => {
 		else if(regions.includes(args[3])) region = args[3];
 	}
 
-	console.log(platform + "   " + region + "    " + args[0]);
+	args[0] = args[0].replace("#", "-");
+
 	owjs.getOverall(platform, region, args[0]).then((data) => {
-		console.dir(data, {depth : 2, colors : true});
 		let rateComp = (data.competitive.global.games_won/data.competitive.global.games_played*100).toString().substring(0,4);
 		let rateQuick = (data.quickplay.global.games_won/data.quickplay.global.games_played*100).toString().substring(0,4);
 		const embed = new Discord.RichEmbed()
@@ -37,10 +37,10 @@ exports.run = (client, message, servers, args) => {
 			.addField("Level",data.profile.level,true)
 			.addField("Prestige",data.profile.tier,true)
 			.addField("Rank",data.profile.rank,true)
-			.addBlankField()
+			//.addBlankField()
 
 
-			.addField("Competitive",rateComp + "\% Win Rate",false)
+			.addField("__**Competitive**__",rateComp + "\% Win Rate",false)
 			.addField("Most Played", data.competitive.global.masteringHeroe,true)
 			.addField("Eliminations",data.competitive.global.eliminations,true)
 			.addField("Hero Damage",data.competitive.global.hero_damage_done,true)
@@ -49,18 +49,17 @@ exports.run = (client, message, servers, args) => {
 			.addField("Games Won",data.competitive.global.games_won,true)
 			.addField("Games Lost",data.competitive.global.games_lost,true)
 			.addField("Games Played",data.competitive.global.games_played,true)
-			.addBlankField()
+			//.addBlankField()
 
 
-			.addField("Quick Play",false)
-			.addField("Most Played", data.quickplay.global.masteringHeroe,true)
+			.addField("__**Quick Play**__","Winrates are not recorded for QP")
+			.addField("Most Played",data.quickplay.global.masteringHeroe,true)
 			.addField("Eliminations",data.quickplay.global.eliminations,true)
 			.addField("Hero Damage",data.quickplay.global.hero_damage_done,true)
 			.addField("Healing",data.quickplay.global.healing_done,true)
 			.addField("Deaths",data.quickplay.global.deaths,true)
 			.addField("Games Won",data.quickplay.global.games_won,true)
-			.addField("Games Lost",data.quickplay.global.games_lost,true)
-			.addField("Games Played",data.quickplay.global.games_played,true)
+
 
 			.setColor(3447003)
 			.setFooter("If data is not found the user's profile is likely private.", "https://i.imgur.com/UIusJGD.png")
@@ -69,7 +68,10 @@ exports.run = (client, message, servers, args) => {
 
 		message.channel.send({embed});
 	})
-	.catch( err => {message.channel.send('No player found')})
+	.catch( err => {
+		console.log(err);
+		message.channel.send("No player found. Note that player name is case sensitive, and player profiles are now private by default.");
+	})
 
 }
 
