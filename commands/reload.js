@@ -9,3 +9,10 @@ exports.run = (client, message, servers, args) => {
  	message.reply("${args[0]} has been reloaded");
 };
 
+exports.help = {
+	name: "reload",
+	category: "Functional",
+	usage: "reload",
+	help: "Reload a command, for use if changes have been made since first run",
+	dev: true
+}

@@ -8,3 +8,12 @@ exports.run = (client, message, servers, args) => {
 		message.member.voiceChannel.leave();
 	}
 }
+
+
+exports.help = {
+	name: "stop",
+	category: "Music",
+	usage: "stop",
+	help: "Stop the queue and remove all songs (nonfunctional)",
+	dev: false
+}

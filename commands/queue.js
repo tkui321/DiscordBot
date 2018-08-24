@@ -10,7 +10,7 @@ exports.run = (client, message, servers, args) => {
 		message.channel.send(message.author + " please enter a voice channel.");
 		return;
 	}
-	
+
 	//add search if not a url
 
 	if(!servers[message.guild.id]) servers[message.guild.id] = {
@@ -45,4 +45,13 @@ function play(servers, connection, message){
 //	return url.toLowerCase().indexOf("youtube.com" > -1);
 //} 28:52
 
-function searchVideos()
+function searchVideos() {}
+
+
+exports.help = {
+	name: "queue",
+	category: "Music",
+	usage: "queue",
+	help: "Add a new song to the queue from youtube (nonfunctional)",
+	dev: false
+}

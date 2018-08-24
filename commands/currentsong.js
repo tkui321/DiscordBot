@@ -34,3 +34,12 @@ exports.run = (client, message, servers, args) => {
 
         message.channel.send({embed});
 }
+
+
+exports.help = {
+	name: "currentsong",
+	category: "Music",
+	usage: "currentsong",
+	help: "Get information about the current song (nonfunctional)",
+	dev: false
+}
