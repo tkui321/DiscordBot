@@ -6,7 +6,7 @@ exports.run = (client, message, servers, args) => {
 		message.channel.bulkDelete(toDelete);
 
 		const numDeleted = toDelete.array().length;
-		message.channel.send("Successfully deleted **" + numDeleted + "** messages from this channel.");
+		message.channel.send("Successfully cleaned **" + numDeleted + "** messages from this channel.");
 	})
 	.catch((err) => {
 		console.log("---Error in !!clean---");

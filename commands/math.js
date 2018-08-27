@@ -1,5 +1,6 @@
 const request = require('request');
 const Discord = require("discord.js");
+const config = require("../config.json");
 
 exports.run = async (client, message, servers, args) => {
 	if(!args[0]) message.channel.send(message.author + " add some math to evaluate!");
@@ -12,7 +13,7 @@ exports.run = async (client, message, servers, args) => {
 			message.channel.send({embed: {
 				title: expression,
 				description: `\`\`\`js\n${body}\n\`\`\``,
-				color: 3447003,
+				color: config.embed_color,
 				url: "http://mathjs.org/"
 			}});
 		}

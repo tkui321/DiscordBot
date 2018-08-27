@@ -1,5 +1,6 @@
 const { constants, hiscores } = require("osrs-api");
 const Discord = require("discord.js");
+const config = require("../config.json");
 
 
 exports.run = (client, message, servers, args) => {
@@ -50,7 +51,7 @@ exports.run = (client, message, servers, args) => {
 				.addField("Total Level","**Level: **" + data.overall.level + "\n**Experience: **" + data.overall.experience + "\n**Rank: **" + data.overall.rank,true)
 
 
-				.setColor(3447003)
+				.setColor(config.embed_color)
 				.setFooter("If data is not found the user may be an ironman")
 				.setTimestamp()
 

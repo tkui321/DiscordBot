@@ -1,5 +1,6 @@
 const owjs = require("overwatch-js");
 const Discord = require("discord.js");
+const config = require("../config.json");
 
 const defaultPlatform = "pc";
 const defaultRegion = "us";
@@ -52,7 +53,7 @@ exports.run = (client, message, servers, args) => {
 			//.addBlankField()
 
 
-			.addField("__**Quick Play**__","Winrates are not recorded for QP")
+			.addField("__**Quick Play**__","Winrates are not recorded for QP", false)
 			.addField("Most Played",data.quickplay.global.masteringHeroe,true)
 			.addField("Eliminations",data.quickplay.global.eliminations,true)
 			.addField("Hero Damage",data.quickplay.global.hero_damage_done,true)
@@ -61,7 +62,7 @@ exports.run = (client, message, servers, args) => {
 			.addField("Games Won",data.quickplay.global.games_won,true)
 
 
-			.setColor(3447003)
+			.setColor(config.embed_color)
 			.setFooter("If data is not found the user's profile is likely private.", "https://i.imgur.com/UIusJGD.png")
 			.setThumbnail(data.profile.avatar)
 			.setTimestamp()

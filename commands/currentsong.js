@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const videoInfo = require("youtube-info");
 const getVideoId = require("get-youtube-id");
+const config = require("../config.json");
 
 exports.run = (client, message, servers, args) => {
 	// data setup
@@ -13,7 +14,7 @@ exports.run = (client, message, servers, args) => {
 	const embed = new Discord.RichEmbed()
         .setTitle(info.title)
         .setAuthor(client.user.username, "https://i.imgur.com/sGcURt3.png")
-        .setColor(3447003)
+        .setColor(config.embed_color)
         .setDescription(info.description)
         .setFooter("This is the footer.", "http://i.imgur.com/w1vhFSR.png")
         //.setImage("http://i.imgur.com/yVpymuV.png")

@@ -1,8 +1,8 @@
 const pubg = require("pubg.js");
 const auth = require("../auth.json");
 const Discord = require("discord.js");
+const config = require("../config.json");
 const Client = new pubg.Client(auth.pubg_api_key, "pc-na");
-
 
 exports.run = (client, message, servers, args) => {
 	if(!args[0]) {
@@ -53,7 +53,7 @@ exports.run = (client, message, servers, args) => {
 		            .addField("Team Kills",season.attributes.gameModeStats[gamemode].teamKills,true)
 		            .addField("Top 10s",season.attributes.gameModeStats[gamemode].top10s,true)
 
-      				.setColor(3447003)
+      				.setColor(config.embed_color)
       				.setFooter("Try adding a game type parameter to see stats for different gamemodes.")
       				.setTimestamp()
 

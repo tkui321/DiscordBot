@@ -1,7 +1,10 @@
 const request = require('request-promise');
 const Discord = require("discord.js");
+const config = require("../config.json");
+
 
 exports.run = async (client, message, servers, args) => {
+	//TODO fix promise style
 	let data = await request( { uri: 'https://xkcd.com/info.0.json', json: true } );
 	let comic;
 
@@ -21,7 +24,7 @@ exports.run = async (client, message, servers, args) => {
 		.setDescription(data.alt)
 		.setURL(data.url)
 		.setImage(data.img)
-		.setColor(3447003)
+		.setColor(config.embed_color)
 		.setFooter("Comic #" + data.num)
 		.setTimestamp()
 
