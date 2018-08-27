@@ -2,6 +2,9 @@ exports.run = (client, message, servers, args) => {
 	let target = message.mentions.members.first();
 	let reason = args.join(" ");
 
+	if(client.user == target)
+		return message.channel.send("Nice try.");
+
 	if(message.mentions.members.size == 0)
 		return message.channel.send(message.author + " you need to mention a user to .");
 
