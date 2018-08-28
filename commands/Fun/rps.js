@@ -31,6 +31,7 @@ exports.help = {
 
 exports.config = {
 	enabled: true,
+	guildOnly: false,
 	permissionLevel: 1,
 	aliases: [ "rockpaperscissors", "rock-paper-scissors" ],
 	perms: [  ]

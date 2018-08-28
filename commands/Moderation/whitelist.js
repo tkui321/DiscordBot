@@ -35,6 +35,7 @@ exports.help = {
 
 exports.config = {
 	enabled: true,
+	guildOnly: true,
 	permissionLevel: 3,
 	aliases: [  ],
 	perms: [ "ADMINISTRATOR" ]

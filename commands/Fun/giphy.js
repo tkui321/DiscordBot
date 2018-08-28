@@ -33,6 +33,7 @@ exports.help = {
 
 exports.config = {
 	enabled: true,
+	guildOnly: false,
 	permissionLevel: 1,
 	aliases: [ "gfy" ],
 	perms: [  ]

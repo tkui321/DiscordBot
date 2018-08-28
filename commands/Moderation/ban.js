@@ -35,6 +35,7 @@ exports.help = {
 
 exports.config = {
 	enabled: true,
+	guildOnly: true,
 	permissionLevel: 4,
 	aliases: [  ],
 	perms: [ "BAN_MEMBERS" ]

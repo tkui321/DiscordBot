@@ -1,5 +1,5 @@
 const categories = require("./help.json");
-
+const config = require("../config.json");
 
 exports.run = (commands) => {
 	commands.array().forEach((c) => {
@@ -10,9 +10,19 @@ exports.run = (commands) => {
 		//error handle for category name that does not match with the above categories object
 		if(!categories.hasOwnProperty(command.help.category)) return console.log("---Error " + c + " has improper category name---");
 
-		if(!command.help.dev) {
-			let field = "***" + command.help.usage + "*** - " + command.help.help + "\n";
-			categories[command.help.category] = categories[command.help.category].concat(field);
+		if(command.help.dev) return; //exclude dev commands
+
+		//per config exclude moderation commands
+		if(!config.allow_moderation && command.help.category == "Moderation") {
+			command.config.enabled = false;
+			return;
 		}
+
+
+
+
+		let field = "***" + command.help.usage + "*** - " + command.help.help + "\n";
+		categories[command.help.category] = categories[command.help.category].concat(field);
+
 	});
 }
