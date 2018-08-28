@@ -1,8 +1,11 @@
+const config = require("../config.json");
+
 exports.run = (client, message, servers, args) => {
+	if(!config.allow_moderation) return;
 	let target = message.mentions.members.first();
 	let reason = args.join(" ");
 
-	if(client.user == target)
+	if(target.user.bot)
 		return message.channel.send("Nice try.");
 
 	if(message.mentions.members.size == 0)

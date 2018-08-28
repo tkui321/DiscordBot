@@ -39,7 +39,7 @@ exports.run = (client, message, servers, args) => {
 
 exports.help = {
 	name: "invite",
-	category: "Moderation",
+	category: "Functional",
 	usage: "invite [expiration time] [# of uses]",
 	help: "Create an invite (both arguments needed if one used)",
 	dev: false
