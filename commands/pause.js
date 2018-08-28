@@ -10,3 +10,10 @@ exports.help = {
 	help: "Temporarily pause the current song (nonfunctional)",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 2,
+	aliases: [  ],
+	perms: [  ]
+};

@@ -37,6 +37,8 @@ exports.run = (client, message, servers, args) => {
 	}
 }
 
+
+
 exports.help = {
 	name: "invite",
 	category: "Functional",
@@ -44,3 +46,10 @@ exports.help = {
 	help: "Create an invite (both arguments needed if one used)",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 2,
+	aliases: [  ],
+	perms: [ "CREATE_INSTANT_INVITE" ]
+};

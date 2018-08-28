@@ -9,3 +9,10 @@ exports.help = {
 	help: "Pong!",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [  ],
+	perms: [  ]
+};

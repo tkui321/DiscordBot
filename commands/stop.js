@@ -17,3 +17,10 @@ exports.help = {
 	help: "Stop the queue and remove all songs (nonfunctional)",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 3,
+	aliases: [  ],
+	perms: [  ]
+};

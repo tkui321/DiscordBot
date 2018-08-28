@@ -27,3 +27,9 @@ exports.help = {
 	usage: "math <function>",
 	help: "Evaluate a mathematical function"
 }
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [  ],
+	perms: [  ]
+};

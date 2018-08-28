@@ -32,3 +32,10 @@ exports.help = {
 	help: "Allow a user to use my commands",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 3,
+	aliases: [  ],
+	perms: [ "ADMINISTRATOR" ]
+};

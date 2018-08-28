@@ -10,3 +10,10 @@ exports.help = {
 	help: "Skip the currently playing song on the queue (nonfunctional)",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 2,
+	aliases: [  ],
+	perms: [  ]
+};

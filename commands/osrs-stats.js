@@ -75,3 +75,10 @@ exports.help = {
 	help: "Check someone's Old School Runescape stats",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [ "osrsstats", "osrs" ],
+	perms: [  ]
+};

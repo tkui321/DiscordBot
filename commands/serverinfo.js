@@ -24,3 +24,10 @@ exports.help = {
 	help: "See some basic information about this server",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [ "info", "server" ],
+	perms: [  ]
+};

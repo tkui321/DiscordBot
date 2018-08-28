@@ -1,9 +1,7 @@
-const SQLite = require("better-sqlite3");
-const sql = new SQLite('./data/scores.sqlite');
 const Discord = require("discord.js");
 
 exports.run = (client, message, servers, args) => {
-	const top10 = sql.prepare("SELECT * FROM scores WHERE guild = ? ORDER BY points DESC LIMIT 10;").all(message.guild.id);
+	const top10 = client.top10Scores.all(message.guild.id);
 
 	// Now shake it and show it! (as a nice embed, too!)
 	const embed = new Discord.RichEmbed()
@@ -24,5 +22,13 @@ exports.help = {
 	name: "leaderboard",
 	category: "Points",
 	usage: "leaderboard",
-	help: "See who the top users are in terms of points"
+	help: "See who the top users are in terms of points",
+	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [ "highscore" ],
+	perms: [  ]
+};

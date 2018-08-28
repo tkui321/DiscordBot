@@ -68,6 +68,7 @@ exports.run = (client, message, servers, args) => {
 }
 
 
+
 exports.help = {
 	name: "pubg-stats",
 	category: "Games",
@@ -75,3 +76,10 @@ exports.help = {
 	help: "Check the PUBG stats of a player (TODO region)",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [ "pubgstats", "pubg" ],
+	perms: [  ]
+};

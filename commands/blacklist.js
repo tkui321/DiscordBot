@@ -35,3 +35,11 @@ exports.help = {
 	help: "Blacklist a user from using my commands",
 	dev: false
 }
+
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 3,
+	aliases: [  ],
+	perms: [ "MANAGE_ROLES" ]
+};

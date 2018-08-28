@@ -23,6 +23,7 @@ exports.run = (client, message, servers, args) => {
 	}
 }
 
+
 exports.help = {
 	name: "ban",
 	category: "Moderation",
@@ -30,3 +31,11 @@ exports.help = {
 	help: "Ban a user from this server",
 	dev: false
 }
+
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 4,
+	aliases: [  ],
+	perms: [ "BAN_MEMBERS" ]
+};

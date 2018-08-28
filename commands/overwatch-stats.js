@@ -84,3 +84,10 @@ exports.help = {
 	help: "Check the overwatch stats of a player (TODO region)",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [ "overwatchstats", "ow", "overwatch" ],
+	perms: [  ]
+};

@@ -26,3 +26,10 @@ exports.help = {
 	help: "Play rock paper scissors with the bot!",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [ "rockpaperscissors", "rock-paper-scissors" ],
+	perms: [  ]
+};

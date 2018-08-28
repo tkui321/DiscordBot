@@ -16,3 +16,10 @@ exports.help = {
 	help: "Reload a command, for use if changes have been made since first run",
 	dev: true
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 5,
+	aliases: [  ],
+	perms: [  ]
+};

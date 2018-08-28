@@ -44,3 +44,10 @@ exports.help = {
 	help: "Check the status of various steam services",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [ "steam" ],
+	perms: [  ]
+};

@@ -11,3 +11,10 @@ exports.help = {
 	help: "Resume the queue if it was paused (nonfunctional)",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 2,
+	aliases: [ "continue" ],
+	perms: [  ]
+};

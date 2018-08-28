@@ -30,3 +30,10 @@ exports.help = {
 	help: "Kick a user from this server",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 3,
+	aliases: [  ],
+	perms: [ "KICK_MEMBERS" ]
+};

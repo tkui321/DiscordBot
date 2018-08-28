@@ -42,3 +42,10 @@ exports.help = {
 	help: "You already used it!",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [  ],
+	perms: [  ]
+};

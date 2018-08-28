@@ -30,3 +30,10 @@ exports.help = {
 	help: "Find a giphy related to your search term",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [ "gfy" ],
+	perms: [  ]
+};

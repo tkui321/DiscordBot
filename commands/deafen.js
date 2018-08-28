@@ -31,3 +31,10 @@ exports.help = {
 	help: "Toggle whether a user is deafened",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 3,
+	aliases: [  ],
+	perms: [ "DEAFEN_MEMBERS" ]
+};

@@ -22,3 +22,10 @@ exports.help = {
 	help: "Removes command calls and bot responses from this channel",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 2,
+	aliases: [ "clear" ],
+	perms: [ "MANAGE_MESSAGES" ]
+};

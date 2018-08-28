@@ -24,6 +24,8 @@ exports.run = (client, message, servers, args) => {
 	}
 }
 
+
+
 exports.help = {
 	name: "mute",
 	category: "Moderation",
@@ -31,3 +33,10 @@ exports.help = {
 	help: "Toggle whether a user is muted",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 3,
+	aliases: [  ],
+	perms: [ "MUTE_MEMBERS" ]
+};

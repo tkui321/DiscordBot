@@ -48,6 +48,7 @@ function play(servers, connection, message){
 function searchVideos() {}
 
 
+
 exports.help = {
 	name: "queue",
 	category: "Music",
@@ -55,3 +56,10 @@ exports.help = {
 	help: "Add a new song to the queue from youtube (nonfunctional)",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 2,
+	aliases: [ "play" ],
+	perms: [  ]
+};

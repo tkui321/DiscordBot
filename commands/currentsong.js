@@ -44,3 +44,11 @@ exports.help = {
 	help: "Get information about the current song (nonfunctional)",
 	dev: false
 }
+
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [  ],
+	perms: [  ]
+};

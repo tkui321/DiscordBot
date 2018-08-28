@@ -14,3 +14,10 @@ exports.help = {
 	help: "Ask the magic 8 ball a question",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [ "8b" ],
+	perms: [  ]
+};

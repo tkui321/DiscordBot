@@ -66,3 +66,10 @@ exports.help = {
 	help: "Check your own points or those of another user",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [ "score" ],
+	perms: [  ]
+};

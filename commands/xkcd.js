@@ -39,3 +39,10 @@ exports.help = {
 	help: "See the latest xkcd comic or a random one",
 	dev: false
 }
+
+exports.config = {
+	enabled: true,
+	permissionLevel: 1,
+	aliases: [  ],
+	perms: [  ]
+};
