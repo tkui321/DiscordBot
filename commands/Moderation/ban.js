@@ -11,11 +11,8 @@ exports.run = (client, message, servers, args) => {
 	if(message.mentions.members.size == 0)
 		return message.channel.send(message.author + " you need to mention a user to ban.");
 
-	if(!(message.member.hasPermission("BAN_MEMBERS") && target.bannable))
+	if(!target.bannable)
 		return message.channel.send("I'm sorry " + message.author + ", I'm afraid you can't do that");
-
-	if(!message.guild.me.hasPermission("BAN_MEMBERS"))
-		return message.channel.send(message.author + " I don't have permission to do that");
 
 	else {
 		target.ban(target.user.username + "#" + target.user.discriminator + " was banned by " + message.author.username + "#" + message.author.discriminator + " for reason: " + reason);

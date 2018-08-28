@@ -11,11 +11,8 @@ exports.run = (client, message, servers, args) => {
 	if(message.mentions.members.size == 0)
 		return message.channel.send(message.author + " you need to mention a user to kick.");
 
-	if(!(message.member.hasPermission("KICK_MEMBERS") && target.kickable))
+	if(!target.kickable)
 		return message.channel.send("I'm sorry " + message.author + ", I'm afraid you can't do that");
-
-	if(!message.guild.me.hasPermission("KICK_MEMBERS"))
-		return message.channel.send(message.author + " I don't have permission to do that");
 
 	else {
 		target.kick(target.user.username + "#" + target.user.discriminator + " was kicked by " + message.author.username + "#" + message.author.discriminator + " for reason: " + reason);

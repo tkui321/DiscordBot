@@ -6,9 +6,6 @@ exports.run = (client, message, servers, args) => {
 	if(!message.guild) return; //ignore private messages
 	if(args[1]) return message.channel.send(message.author + " that's too many arguments! Just tag the target.")
 
-	if(!message.member.hasPermission("ADMINISTRATOR"))
-		return message.channel.send(message.author + " you don't have permission to do that.");
-
 	let target = message.mentions.members.first();
 	let entry = client.getBlacklist.get(`${message.guild.id}-${target.id}`);
 
@@ -38,5 +35,5 @@ exports.config = {
 	guildOnly: true,
 	permissionLevel: 3,
 	aliases: [  ],
-	perms: [ "ADMINISTRATOR" ]
+	perms: [ "MANAGE_ROLES" ]
 };

@@ -76,8 +76,16 @@ client.on("message", (message) => {
 	        	commandFile = require(commands.get(command));
 			else if(aliases.get(command))
 				commandFile = require(aliases.get(command));
-			else return; //TODO consider telling people to run !!help
-	        commandFile.run(client, message, servers, args);
+			else {
+				if(config.verbose)
+					message.channel.send(message.author + " invalid command. Type " + config.prefix + "help to see a list of commands.")
+				return;
+			}
+
+
+			//check self and sender for permission to perform action, also if can be run in guild
+			let hasPermission = checkForPermission(commandFile, message);
+	        if(hasPermission) commandFile.run(client, message, servers, args);
 	    }
 	    catch (err) {
 	        console.error(err);
@@ -122,7 +130,32 @@ client.login(auth.discord_token);
 
 
 
-
+function checkForPermission(commandFile, message) {
+	let hasPermission = true;
+	commandFile.config.perms.forEach((permission) => {
+		if(!message.member.hasPermission(permission)) {
+			if(config.verbose)
+				message.channel.send(message.author + " you don't have permission to do that.");
+			hasPermission = false;
+			return hasPermission;
+		}
+		if(!message.guild.me.hasPermission(permission)) {
+			if(config.verbose)
+				message.channel.send(message.author + " I don't have permission to do that.");
+			hasPermission = false;
+			return hasPermission;
+		}
+	});
+	if(!message.guild && commandFile.config.guildOnly) {
+		message.channel.send(message.author + " that command can only be used in a Discord server.");
+		hasPermission = false;
+	}
+	if(!commandFile.config.enabled) {
+		if(config.verbose) message.channel.send(message.author + " command is disabled.");
+		hasPermission = false;
+	}
+	return hasPermission;
+}
 
 
 
