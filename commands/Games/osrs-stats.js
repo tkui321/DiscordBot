@@ -1,6 +1,6 @@
 const { constants, hiscores } = require("osrs-api");
 const Discord = require("discord.js");
-const config = require("../config.json");
+const config = require("../../config.json");
 
 
 exports.run = (client, message, servers, args) => {

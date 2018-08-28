@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const config = require("../config.json");
-const categories = require("../data/help.json");
+const config = require("../../config.json");
+const categories = require("../../data/help.json");
 
 
 exports.run = (client, message, servers, args) => {

@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const videoInfo = require("youtube-info");
 const getVideoId = require("get-youtube-id");
-const config = require("../config.json");
+const config = require("../../config.json");
 
 exports.run = (client, message, servers, args) => {
 	// data setup

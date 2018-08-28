@@ -1,7 +1,7 @@
 const pubg = require("pubg.js");
-const auth = require("../auth.json");
+const auth = require("../../auth.json");
 const Discord = require("discord.js");
-const config = require("../config.json");
+const config = require("../../config.json");
 const Client = new pubg.Client(auth.pubg_api_key, "pc-na");
 
 exports.run = (client, message, servers, args) => {

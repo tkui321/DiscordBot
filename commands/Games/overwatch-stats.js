@@ -1,6 +1,6 @@
 const owjs = require("overwatch-js");
 const Discord = require("discord.js");
-const config = require("../config.json");
+const config = require("../../config.json");
 
 const defaultPlatform = "pc";
 const defaultRegion = "us";

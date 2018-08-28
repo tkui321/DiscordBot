@@ -2,6 +2,8 @@ exports.run = (client, message, servers, args) => {
 	let rps = ["rock","paper","scissors"];
 	let myIndex = Math.floor(Math.random() * rps.length);
 
+	if(!args[0]) return message.channel.send(message.author + " say rock, paper, or scissors.");
+
 	let playerInput = args[0].toString().toLowerCase();
 	let playerIndex = -1;
 

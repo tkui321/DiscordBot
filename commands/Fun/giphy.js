@@ -1,4 +1,4 @@
-const auth = require("../auth.json");
+const auth = require("../../auth.json");
 const request = require('request');
 
 exports.run = (client, message, servers, args) => {

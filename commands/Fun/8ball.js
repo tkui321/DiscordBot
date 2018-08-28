@@ -1,4 +1,4 @@
-const responses = require("../data/8ball.json");
+const responses = require("../../data/8ball.json");
 
 exports.run = (client, message, servers, args) => {
 	let response = responses.message[Math.floor(Math.random() * responses.message.length)];
